@@ -1,0 +1,27 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+body {
+    @apply bg-[#00343A] text-[#F8F1E5];
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+h1{
+    @apply text-4xl lg:text-5xl 2xl:text-6xl font-medium;
+}
+h2{
+    @apply text-2xl lg:text-3xl 2xl:text-4xl font-normal;
+}
+.hover-button {
+    @apply text-xl/6 font-semibold text-[#00343A] bg-[#EEBF37] px-6 py-4 rounded-full border-4 border-[#EEBF37] hover:bg-[#00343A] hover:text-[#EEBF37] transition duration-300 ease-in-out;
+    transition: transform 0.2s ease-in-out;
+    will-change: transform;
+  }
+
+  .hover-button:hover {
+    @apply transform scale-105;
+  }
+
+
