@@ -20,4 +20,12 @@
     </div>
 
     <livewire:products.all-products-list />
+
+    <div class="flex w-full justify-center items-center py-[100px] xl:py-[200px] px-[15px] md:px-[50px]">
+        <hr class="hidden sm:block w-full border-[1px] border-[#F8F1E5]">
+        <div class="flex w-[450%] sm:w-[200%] md:w-[150%] lg:w-[90%] xl:w-[60%] justify-around">
+            <a wire:navigate href="{{ route('page.contacts') }}" class="text-lg/6 font-semibold text-[#00343A] bg-[#EEBF37] px-5 py-3 rounded-full hover:scale-105 transition duration-300 ease-in-out">Проконсультироваться</a>
+        </div>
+        <hr class="hidden sm:block w-full border-[1px] border-[#F8F1E5]">
+    </div>
 </div>

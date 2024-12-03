@@ -16,8 +16,9 @@
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-
     <link href="https://cdn.rawgit.com/michalsnik/aos/2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     @livewireStyles
 
 </head>

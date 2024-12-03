@@ -33,13 +33,14 @@ document.addEventListener('livewire:navigated', function () {
 
     // Инициализация AOS
     AOS.init({
-        duration: 750,
-        easing: 'ease-in-out',
-        mirror: false,
-        anchorPlacement: 'top-bottom',
-        startEvent: 'DOMContentLoaded',
-        offset: 10,
-        once: true,
-        disable: 'mobile',
+        duration: 750, // Длительность анимации
+        easing: 'ease-in-out', // Еasing анимации
+        mirror: false, // Отражение анимации при прокрутке обратно
+        anchorPlacement: 'top-bottom', // Положение якоря
+        startEvent: 'DOMContentLoaded', // Событие запуска
+        offset: 10, // Начать анимацию, когда элемент будет на 20px видимости
+        once: true, // Анимация сработает только один раз
+        disable: 'mobile', // Отключить для мобильных устройств (при желании)
     });
+
 });

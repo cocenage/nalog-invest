@@ -8,9 +8,11 @@
     "require": {
         "php": "^8.2",
         "filament/filament": "^3.2",
+        "guzzlehttp/guzzle": "^7.9",
         "laravel/framework": "^11.31",
         "laravel/tinker": "^2.9",
-        "livewire/livewire": "^3.5"
+        "livewire/livewire": "^3.5",
+        "telegram-bot/api": "^2.5"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
