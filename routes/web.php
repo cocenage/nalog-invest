@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Client\FeedbackController;
+use App\Http\Controllers\MetaImageController;
 use App\Livewire\NotFound;
 use App\Livewire\PageAbout;
 use App\Livewire\PageContacts;
@@ -13,8 +15,12 @@ Route::get('/contacts', PageContacts::class)->name('page.contacts');
 Route::get('/about', PageAbout::class)->name('page.about');
 
 Route::get('/services', PageProducts::class)->name('page.products');
-Route::get('/services/{slug}/show', SingleProduct::class)->name('single.product');
+Route::get('/services/{slug}', SingleProduct::class)->name('single.product');
+Route::get('/meta-image/{product}', [MetaImageController::class, 'generate'])->name('meta.image');;
 
-Route::get('/{any}', NotFound::class)->where('any', '.*');
 
 Route::post('/contact', [PageContacts::class, 'handleForm'])->name('contact.send');
+
+Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
+
+Route::get('/{any}', NotFound::class)->where('any', '.*');

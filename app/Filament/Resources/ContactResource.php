@@ -24,15 +24,15 @@ class ContactResource extends Resource
 
     public static function getNavigationLabel(): string
     {
-        return 'Контакты';
+        return 'Контакты ';
     }
     public static function getNavigationGroup(): string
     {
-        return 'Контакты';
+        return 'Контакты и документы';
     }
     public static function getPluralLabel(): string
     {
-        return 'Контакты';
+        return 'Контакты2';
     }
     protected static ?string $modelLabel = 'Контакты';
     protected static ?string $pluralModelLabel = 'Контакты';
@@ -104,7 +104,8 @@ class ContactResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
             ])
-            ->bulkActions([]);
+            ->bulkActions([])
+            ->paginated(false);
     }
 
     public static function getRelations(): array
@@ -122,10 +123,7 @@ class ContactResource extends Resource
             'edit' => Pages\EditContact::route('/{record}/edit'),
         ];
     }
-    public static function getNavigationBadge(): ?string
-    {
-        return static::getModel()::count();
-    }
+
 
     public static function getGloballySearchableAttributes(): array
     {
@@ -135,10 +133,7 @@ class ContactResource extends Resource
             'tg',
         ];
     }
-    public static function canCreate(): bool
-    {
-        return Contact::count() === 0;
-    }
+
     public static function mutateFormDataBeforeCreate(array $data): array
     {
         // Проверка на наличие записи

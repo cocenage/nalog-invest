@@ -10,12 +10,7 @@ class Footer extends Component
     public $contact;
     public function mount()
     {
-
-
-        // Получаем данные о нас
         $this->contact = Contact::first(); // Предполагаем, что у вас только одна запись
-
-
     }
     public function render()
     {

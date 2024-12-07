@@ -1,14 +1,20 @@
-<div class="pt-[100px] h-screen">
+@push('meta')
+<title>{{ 'Nalog Invest | Страница не найдена' }}</title>
+<meta name="description" content="{{ 'Страница не найдена' }}">
+<meta name="keywords" content="{{ 'ошибка 404' }}">
+@endpush
+
+<div class="pt-[20px] md:pt-[100px] h-screen">
     <nav class="px-[15px] md:px-[50px] w-full rounded-md text-sm">
         <ol class="list-reset flex ">
             <li class="group">
                 <a
                     wire:navigate href="{{ route('page.home') }}"
-                    class="text-[#E3BF46] group-hover:text-[#F8F1E5] transition duration-300 ease-in-out">Главная
-                    <span class="mx-2 text-[#E3BF46] group-hover:text-[#F8F1E5] transition duration-300 ease-in-out">/</span>
+                    class="text-[#E3BF46] group-hover:text-[#F7F7F7] transition duration-300 ease-in-out">Главная
+                    <span class="mx-2 text-[#E3BF46] group-hover:text-[#F7F7F7] transition duration-300 ease-in-out">/</span>
                 </a>
             </li>
-            <li class="text-[#F8F1E5]">?</li>
+            <li class="text-[#F7F7F7]">?</li>
         </ol>
     </nav>
 
@@ -27,6 +33,4 @@
             <a wire:navigate href="{{ route('page.home') }}" class="text-lg/6 font-semibold text-[#00343A] bg-[#EEBF37] px-5 py-3 rounded-full hover:scale-105 transition duration-300 ease-in-out">Вернуться на главную страницу</a>
         </div>
     </div>
-
-
 </div>

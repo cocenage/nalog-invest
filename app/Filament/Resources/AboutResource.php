@@ -21,6 +21,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Validation\ValidationException;
 use App\Filament\Resources\SiteSetting;
+use Filament\Forms\Components\RichEditor;
 
 class AboutResource extends Resource
 {
@@ -28,7 +29,7 @@ class AboutResource extends Resource
 
     public static function getNavigationLabel(): string
     {
-        return 'О нас';
+        return 'Обо мне';
     }
     public static function getNavigationGroup(): string
     {
@@ -36,11 +37,10 @@ class AboutResource extends Resource
     }
     public static function getPluralLabel(): string
     {
-        return 'О нас';
+        return 'Обо мне';
     }
-    protected static ?string $modelLabel = 'О нас';
-    protected static ?string $pluralModelLabel = 'О нас';
-    protected static ?string $recordTitleAttribute = "name";
+    protected static ?string $modelLabel = 'Обо мне';
+    protected static ?string $pluralModelLabel = 'Обо мне';
 
     protected static ?string $navigationIcon = 'heroicon-o-user';
 
@@ -54,18 +54,31 @@ class AboutResource extends Resource
                         ->directory('/about/images')
                         ->required()
                 ])->columnSpanFull(),
-
-
                 Section::make('Подробное описание услуги')->schema([
                     Repeater::make('specifics')->label('')->schema([
                         TextInput::make('h1')
                             ->label('Заголовок')
                             ->placeholder('Анализ налоговой ситуации')
                             ->maxLength(255),
-                        Textarea::make('h2')
+                            RichEditor::make('h2')
+                            ->toolbarButtons([
+                                'attachFiles',
+                                'blockquote',
+                                'bold',
+                                'bulletList',
+                                'codeBlock',
+                                'h2',
+                                'h3',
+                                'italic',
+                                'link',
+                                'orderedList',
+                                'redo',
+                                'strike',
+                                'underline',
+                                'undo',
+                                ])
                             ->label('Описание')
                             ->placeholder('Я предоставлю вам глубокий анализ вашей налоговой ситуации и предложить эффективные решения, соответствующие вашим уникальным потребностям.')
-                            ->rows(5)
                             ->columnSpan(3),
                     ])->columnSpanFull(),
                 ])->columnSpanFull(),
@@ -82,7 +95,6 @@ class AboutResource extends Resource
                         TextInput::make('h4')
                             ->label('Описание')
                             ->placeholder('Я предоставлю вам глубокий анализ вашей налоговой ситуации и предложить эффективные решения, соответствующие вашим уникальным потребностям.')
-
                             ->columnSpan(3),
                     ])->columnSpanFull(),
                 ])->columnSpanFull(),
@@ -91,11 +103,12 @@ class AboutResource extends Resource
 
     public static function table(Table $table): Table
     {
+
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('custom')
                     ->label('Редактирование страницы')
-                    ->getStateUsing(fn($record) => 'О нас')
+                    ->getStateUsing(fn($record) => 'Обо мне')
                     ->sortable(false),
             ])
             ->filters([
@@ -104,7 +117,8 @@ class AboutResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
             ])
-            ->bulkActions([]);
+            ->bulkActions([])
+            ->paginated(false);
     }
 
     public static function getRelations(): array

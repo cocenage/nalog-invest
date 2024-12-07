@@ -1,10 +1,8 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-
-
 body {
-    @apply bg-[#00343A] text-[#F8F1E5];
+    @apply bg-[#00343A] text-[#F7F7F7];
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     overflow-x: hidden;
@@ -15,38 +13,89 @@ h1{
 h2{
     @apply text-2xl lg:text-3xl 2xl:text-4xl font-normal;
 }
-
-
-
-
-.swiper-button-prev,
-.swiper-button-next {
-    width: 40px; /* Ширина кнопки */
-    height: 40px; /* Высота кнопки */
-    background-color: rgba(255, 255, 255, 0.8); /* Цвет фона */
-    border-radius: 50%; /* Круглая форма */
-    display: flex; /* Используем flex для центрирования содержимого */
-    justify-content: center; /* Центрируем содержимое по горизонтали */
-    align-items: center; /* Центрируем содержимое по вертикали */
-    cursor: pointer; /* Курсор при наведении */
-    position: absolute; /* Позиционирование кнопок */
-    top: 50%; /* Центрируем по вертикали */
-    transform: translateY(-50%); /* Центрируем по вертикали */
-    z-index: 10; /* Убедитесь, что кнопки поверх слайдов */
+input[type="checkbox"] {
+    accent-color: #E3BF46;
+}
+::selection {
+    background-color: #E3BF46;
+    /* Цвет фона выделения */
+    color: #00343A;
+    /* Цвет текста выделения */
 }
 
-.swiper-button-prev {
-    left: 10px; /* Отступ от левого края */
+::-moz-selection {
+    background-color: #E3BF46;
+    /* Цвет фона выделения для Firefox */
+    color: #00343A;
+    /* Цвет текста выделения для Firefox */
+}
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px 15px;
+    margin-bottom: 10px;
 }
 
-.swiper-button-next {
-    right: 10px; /* Отступ от правого края */
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px 15px;
+    margin-bottom: 10px;
 }
 
-/* Стили для SVG-иконок */
-.swiper-button-prev svg,
-.swiper-button-next svg {
-    width: 16px; /* Ширина иконки */
-    height: 16px; /* Высота иконки */
-    stroke: #000; /* Цвет иконки */
+ul, li {
+    list-style: none;
+  }
+
+.swiper-button-prev, .swiper-button-next {
+    background: #E3BF46; /* Remove default Swiper button background */
+    border-radius: 100px;     /* Remove default Swiper button border */
+    width: 60px !important;
+    height: 60px !important;
+    cursor: pointer;
+    margin: 50px;     /* Add some spacing around buttons */
+    /* Add more styling as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+  .swiper-button-prev, .swiper-rtl .swiper-button-next {
+    left: 0px !important;
+    right: -10px !important;
+  }
+  .swiper-button-next, .swiper-rtl .swiper-button-prev {
+    left: auto !important;
+    right: -10px !important;
+  }
+  .rounded-button {
+    width: 60px; /* Ширина кнопки */
+    height: 60px; /* Высота кнопки */
+    display: flex; /* Центрируем содержимое */
+    align-items: center; /* Вертикальное центрирование */
+    justify-content: center; /* Горизонтальное центрирование */
+    border-radius: 50%; /* Делаем кнопку круглой */
+    background: #E3BF46;
+    cursor: pointer; /* Указатель при наведении */
+    transition: background-color 0.3s; /* Плавный переход для фона */
+    z-index: 10; /* Убедитесь, что кнопки выше других элементов */
 }
+
+.swiper-button-next svg, .swiper-button-prev svg {
+    width: 24px !important;
+    height: 24px !important;
+}
+
+  .swiper-button-next::after, .swiper-button-prev::after {
+    content: "" !important;
+}
+.image {
+    transition: transform 0.5s ease; /* Плавный переход для эффекта */
+    /* Используйте scale-110 по умолчанию */
+}
+
+.image.scale {
+    transform: scale(1); /* Уменьшаем до оригинального размера */
+}
+
+

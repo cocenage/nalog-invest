@@ -19,7 +19,7 @@ class PageContacts extends Component
         // Получаем данные о нас
         $this->contact = Contact::first(); // Предполагаем, что у вас только одна запись
 
-        
+
     }
     public function render()
     {
@@ -60,7 +60,7 @@ class PageContacts extends Component
         ]);
 
         // Формируем сообщение
-        $message = "🆕 Новая обратная связь от клиента\n\n";
+        $message = "Новая обратная связь от клиента\n\n";
 
         $message .= "👤 Имя: {$validatedData['name']}\n\n";
 
@@ -73,6 +73,6 @@ class PageContacts extends Component
         $this->sendMessageToTelegram($message);
 
         // Возвращаем ответ (например, редирект или сообщение об успехе)
-        return redirect()->back()->with('success', 'Ваше сообщение отправлено!');
+            return response()->json(['message' => 'Ваше сообщение успешно отправлено!']);
     }
 }

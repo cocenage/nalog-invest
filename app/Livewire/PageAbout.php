@@ -15,8 +15,6 @@ class PageAbout extends Component
 
     public function mount()
     {
-       
-
         // Получаем данные о нас
         $this->about = About::first(); // Предполагаем, что у вас только одна запись
 
@@ -33,6 +31,7 @@ class PageAbout extends Component
     }
     public function render()
     {
+
         return view('livewire.page-about');
     }
 }

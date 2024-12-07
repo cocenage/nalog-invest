@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use AppModelsDocument;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\TextColumn;
 
@@ -21,33 +22,53 @@ class DocumentResource extends Resource
 {
     protected static ?string $model = Document::class;
 
+    public static function getNavigationLabel(): string
+    {
+        return 'Документы';
+    }
+    public static function getNavigationGroup(): string
+    {
+        return 'Контакты и документы';
+    }
+    public static function getPluralLabel(): string
+    {
+        return 'Документы';
+    }
+    protected static ?string $modelLabel = 'Документы';
+    protected static ?string $pluralModelLabel = 'Документы';
+    protected static ?string $recordTitleAttribute = "name";
+
     protected static ?string $navigationIcon = 'heroicon-o-document';
 
     public static function form(Form $form): Form
     {
         return $form
-        ->schema([
-            TextInput::make('name')
-            ->label('Короткое описание услуги')
-            ->placeholder('Профессиональные консультации по вопросам налогообложения')
-            ->maxLength(255)
-            ->required()
-            ->columnSpan(2),
-            FileUpload::make('path')
-                ->label('Upload Document')
-                ->required()
-                ->preserveFilenames()
-                ->storeFileNamesIn('name')
-                ->directory('documents')
-                ->disk('public'),
-        ]);
+            ->schema([
+                Section::make('Документ')->schema([
+                    TextInput::make('name')
+                        ->label('Название документа')
+                        ->placeholder('Политика конфиденциальности ')
+                        ->maxLength(255)
+                        ->required()
+                        ->columnSpan(2),
+                    FileUpload::make('path')
+                        ->label('Загрузить документ')
+                        ->required()
+                        ->preserveFilenames()
+                        ->storeFileNamesIn('name')
+                        ->directory('documents')
+                        ->disk('public'),
+
+                ]),
+
+            ]);
     }
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('name')->label('Document Name'),
+                TextColumn::make('name')->label('Название документа'),
             ])
             ->filters([
                 //
@@ -55,9 +76,8 @@ class DocumentResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
             ])
-            ->bulkActions([
-
-            ]);
+            ->bulkActions([])
+            ->paginated(false);
     }
 
     public static function getRelations(): array
@@ -75,10 +95,7 @@ class DocumentResource extends Resource
             'edit' => Pages\EditDocument::route('/{record}/edit'),
         ];
     }
-    public static function getNavigationBadge(): ?string
-    {
-        return static::getModel()::count();
-    }
+
 
     public static function getGloballySearchableAttributes(): array
     {
