@@ -9,9 +9,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta property="og:title" content="Nalog Invest">
-    <meta property="og:description" content="Краткое и informative описание содержимого страницы.">
-    <meta property="og:image" content="URL_к_изображению_для_предпросмотра">
+    <meta property="og:title" content="Шевченко Екатерина Викторовна">
+    <meta property="og:description" content="Налоговый консалтинг для частных инвесторов">
+    <meta property="og:image" content="{{ asset('images/ogimage.webp') }}">
     <meta property="og:url" content="URL_вашей_страницы">
     <meta property="og:type" content="website">
 

@@ -14,7 +14,7 @@
             </div>
             <div class="">
                 <div class="hidden px-[50px] lg:flex lg:flex-1">
-                    <a href="#" class="text-lg/6 font-semibold text-[#00343A] bg-[#EEBF37] px-5 py-3 rounded-full hover:scale-105 transition duration-300 ease-in-out">Проконсультироваться</a>
+                    <a wire:navigate href="{{ route('page.contacts') }}" class="text-lg/6 font-semibold text-[#00343A] bg-[#EEBF37] px-5 py-3 rounded-full hover:scale-105 transition duration-300 ease-in-out">Проконсультироваться</a>
                 </div>
             </div>
         </div>
