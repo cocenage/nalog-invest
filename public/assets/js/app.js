@@ -22,6 +22,7 @@ document.addEventListener("livewire:navigated", function () {
                     1200: {
                         slidesPerView: 2, // 1 слайд на мобильных устройствах
                         spaceBetween: 20, // расстояние между слайдами
+                        disabled: true,
                     },
                     // Параметры для устройств с шириной экрана больше или равной 768px
                 },
@@ -173,5 +174,5 @@ document.addEventListener("livewire:navigated", function () {
 
 
 
-    
+
 });

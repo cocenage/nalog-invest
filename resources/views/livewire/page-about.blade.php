@@ -18,13 +18,14 @@
             <li class="text-[#F7F7F7]">Обо мне</li>
         </ol>
     </nav>
-    @if($about)
+
     <div class="px-[15px] md:px-[50px] xl:grid grid-cols-12 gap-5 pb-[50px] pt-[15px] xl:pb-[100px]">
         <div class="col-span-10 flex flex-col gap-[30px]">
             <h1>Обо мне</h1>
             <h2>Добро пожаловать на мой сайт, посвящённый инвестиционным налогам для физических лиц</h2>
         </div>
     </div>
+    @if($about)
     <div class="px-[15px] md:px-[50px] w-full h-full">
         <div class="flex flex-col gap-[50px] xl:grid xl:grid-cols-12 xl:gap-5">
             <div class="col-span-5">

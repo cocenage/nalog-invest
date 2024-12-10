@@ -47,6 +47,7 @@ ul, li {
     list-style: none;
   }
 
+
 .swiper-button-prev, .swiper-button-next {
     background: #E3BF46; /* Remove default Swiper button background */
     border-radius: 100px;     /* Remove default Swiper button border */
@@ -58,16 +59,20 @@ ul, li {
     display: flex;
     align-items: center;
     justify-content: center;
+    @media (max-width: 1024px) {
+        display: none !important;
+    }
 
   }
-  .swiper-button-prev, .swiper-rtl .swiper-button-next {
+
+  /* .swiper-button-prev, .swiper-rtl .swiper-button-next {
     left: 0px !important;
     right: -10px !important;
   }
   .swiper-button-next, .swiper-rtl .swiper-button-prev {
     left: auto !important;
     right: -10px !important;
-  }
+  } */
   .rounded-button {
     width: 60px; /* Ширина кнопки */
     height: 60px; /* Высота кнопки */

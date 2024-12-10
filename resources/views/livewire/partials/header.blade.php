@@ -1,8 +1,8 @@
 <header class="bg-[#00343A] overflow-hidden w-full sticky top-0 z-50">
-    <nav class="mx-auto flex items-center justify-between px-[15px] md:px-[50px] py-6 " aria-label="Global">
+    <nav class="mx-auto flex items-center justify-between px-[15px] py-[15px] md:px-[50px] md:py-6 " aria-label="Global">
         <div class="flex lg:flex-1 ">
             <a wire:navigate href="{{ route('page.home') }}" class="items-center flex" href="/" class="-m-1.5 p-1.5">
-                <img class="h-[58px] w-[58px]" src="{{ asset('images/logo.svg') }}" alt="logo">
+                <img class="h-[50px] w-[50px] md:h-[58px] md:w-[58px]" src="{{ asset('images/logo.svg') }}" alt="logo">
                 <p class="text-[24px] text-[#EEBF37] ml-4 lg:block hidden">Nalog Invest</p>
             </a>
         </div>
@@ -41,11 +41,11 @@
     <div id="mobileMenu" class="lg:hidden hidden" role="dialog" aria-modal="true">
         <!-- Background backdrop -->
         <div class="fixed inset-0 z-10 bg-black opacity-30"></div>
-        <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-[#F7F7F7] px-[15px] py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-[#F7F7F7] px-[15px] py-[15px] md:py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div class="flex items-center justify-between">
                 <a class="items-center flex" href="/" class="-m-1.5 p-1.5">
-                    <img class="h-[58px] w-[58px]" src="{{ asset('images/logo.svg') }}" alt="">
-                    <p class="text-[24px] text-[#EEBF37] ml-4">Nalog Invest</p>
+                <img class="h-[50px] w-[50px] md:h-[58px] md:w-[58px]" src="{{ asset('images/logo.svg') }}" alt="logo">
+                    <!-- <p class="text-[24px] text-[#EEBF37] ml-4">Nalog Invest</p> -->
                 </a>
                 <button id="closeMenuButton" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
                     <span class="sr-only">Close menu</span>

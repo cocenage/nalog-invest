@@ -20,7 +20,7 @@
         </div>
         <div class="col-span-6 w-full relative mx-auto h-auto overflow-hidden">
 
-            <p class="text-[24px] font-medium absolute p-[15px] md:px-[50px] z-10 lg:hidden">для частныых инвесторов</p>
+            <p class="text-[24px] font-medium absolute p-[15px] md:px-[50px] z-10 lg:hidden">для частных инвесторов</p>
             <img class="h-[90vh] w-full object-cover image  relative z-0 scale-110 transition-all duration-300" src="{{ asset('images/main.webp') }}" alt="main">
             <div class="p-[15px] md:px-[50px] lg:hidden">
                 <p class="text-[18px] font-medium ">Екатерина Шевченко</p>
@@ -103,43 +103,43 @@
             <div class="swiper-wrapper flex ">
                 @if($comment)
                 <div class="swiper-slide px-[15px] md:px-[50px] xl:px-0 m-auto">
-                    <figure class="flex w-full h-[400px] md:h-[550px] rounded-2xl flex-col justify-between  p-5  bg-[#F7F7F7] ">
+                    <figure class="flex w-full h-[416px] md:h-[550px] rounded-2xl flex-col justify-between  p-5  bg-[#F7F7F7] ">
                         <blockquote class=" mb-8  text-black">
-                            <p class="text-base md:text-2xl">"{{ $comment->description }}</p>
+                            <p class="text-lg md:text-2xl">"{{ $comment->description }}</p>
                         </blockquote>
                         <figcaption class="flex flex-row-reverse space-x-3 gap-3 md:gap-5 items-end">
                             <img class="w-16 h-16 md:w-24 md:h-24 object-cover rounded-full" src="{{ asset('storage/' . $comment->image) }}" alt="profile picture">
-                            <div class="space-y-0.5 font-medium  text-left">
-                                <div class="text-base md:text-2xl font-medium">{{ $comment->name }}</div>
-                                <div class="text-base md:text-2xl ">{{ $comment->title }}</div>
+                            <div class="space-y-0.5 font-medium text-left  items-end">
+                                <div class="text-lg md:text-2xl font-medium">{{ $comment->name }}</div>
+                                <div class="text-lg md:text-2xl ">{{ $comment->title }}</div>
                             </div>
                         </figcaption>
                     </figure>
                 </div>
                 <div class="swiper-slide px-[15px] md:px-[50px] xl:px-0 m-auto">
-                    <figure class="flex w-full h-[400px] md:h-[550px] rounded-2xl flex-col justify-between  p-5  bg-[#F7F7F7] ">
+                    <figure class="flex w-full h-[416px] md:h-[550px] rounded-2xl flex-col justify-between  p-5  bg-[#F7F7F7] ">
                         <blockquote class=" mb-8  text-black">
                             <p class="text-base md:text-2xl">"{{ $comment->description2 }}</p>
                         </blockquote>
                         <figcaption class="flex flex-row-reverse space-x-3 gap-3 md:gap-5 items-end">
                             <img class="w-16 h-16 md:w-24 md:h-24 object-cover rounded-full" src="{{ asset('storage/' . $comment->image2) }}" alt="profile picture">
-                            <div class="space-y-0.5 font-medium  text-left">
-                                <div class="text-base md:text-2xl font-medium">{{ $comment->name2 }}</div>
-                                <div class="text-base md:text-2xl ">{{ $comment->title2 }}</div>
+                            <div class="space-y-0.5 font-medium text-left  items-end">
+                                <div class="text-lg md:text-2xl font-medium">{{ $comment->name2 }}</div>
+                                <div class="text-lg md:text-2xl ">{{ $comment->title2 }}</div>
                             </div>
                         </figcaption>
                     </figure>
                 </div>
                 <div class="swiper-slide px-[15px] md:px-[50px] xl:px-0 m-auto">
-                    <figure class="flex w-full h-[400px] md:h-[550px] rounded-2xl flex-col justify-between  p-5  bg-[#F7F7F7] ">
+                    <figure class="flex w-full h-[416px] md:h-[550px] rounded-2xl flex-col justify-between  p-5  bg-[#F7F7F7] ">
                         <blockquote class=" mb-8  text-black">
                             <p class="text-base md:text-2xl">"{{ $comment->description3 }}</p>
                         </blockquote>
                         <figcaption class="flex flex-row-reverse space-x-3 gap-3 md:gap-5 items-end">
                             <img class="w-16 h-16 md:w-24 md:h-24 object-cover rounded-full" src="{{ asset('storage/' . $comment->image3) }}" alt="profile picture">
-                            <div class="space-y-0.5 font-medium  text-left">
-                                <div class="text-base md:text-2xl font-medium">{{ $comment->name3 }}</div>
-                                <div class="text-base md:text-2xl ">{{ $comment->title3 }}</div>
+                            <div class="space-y-0.5 font-medium text-left  items-end">
+                                <div class="text-lg md:text-2xl font-medium">{{ $comment->name3 }}</div>
+                                <div class="text-lg md:text-2xl ">{{ $comment->title3 }}</div>
                             </div>
                         </figcaption>
                     </figure>
@@ -147,7 +147,7 @@
                 @else
                 @endif
                 <div class="swiper-slide px-[15px] md:px-[50px] xl:px-0 m-auto">
-                    <div class="max-w-[900px] h-[400px] md:h-[550px] bg-[#F7F7F7] rounded-2xl p-5 flex flex-col justify-between">
+                    <div class="max-w-[900px] h-[416px] md:h-[550px] bg-[#F7F7F7] rounded-2xl p-5 flex flex-col justify-between">
                         <p class="text-2xl lg:text-3xl 2xl:text-4xl font-medium ">Оставьте свой отзыв</p>
                         <form id="contactForm" action="{{ route('feedback.store') }}" method="POST" class="flex flex-col gap-[5px]  md:gap-[25px]">
                             @csrf

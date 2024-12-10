@@ -22,7 +22,7 @@
             <h2>Всегда рада помочь разобраться в тонкостях налогообложения для частных инвесторов, оптимизировать и вернуть излишне уплаченные налоги</h2>
         </div>
     </div>
-    
+
     @if($contact)
     <div data-aos="fade-up" class="px-[15px] md:px-[50px]">
         <a target="_blank" href="tel:{{ $contact->tel_link }}">
@@ -63,9 +63,11 @@
             <hr class="w-full border-[1px] border-[#F7F7F7]">
         </a>
     </div>
+    @else
+    @endif
     <div class="px-[15px]  md:px-[50px] pt-[50px] lg:grid lg:grid-cols-12 gap-5 pb-[100px] md:pb-[200px]">
         <div class="bg-[#F7F7F7] w-full h-full md:h-max md:w-max gap-[30px] flex flex-col justify-center rounded-2xl p-[15px] md:p-[50px] text-black col-span-5">
-            <p class="text-2xl lg:text-3xl 2xl:text-4xl font-medium flex justify-center pb-[50px]">Обратная связь</p>
+            <p class="text-2xl lg:text-3xl 2xl:text-4xl font-medium flex justify-center pb-[50px] pt-[25px] md:pt-0">Обратная связь</p>
             <form id="tg" class="flex flex-col gap-[25px] items-center" action="{{ route('contact.send') }}" method="POST">
                 @csrf
                 <!-- Имя -->
@@ -106,13 +108,11 @@
                     </label>
                 </div>
                 <!-- Кнопка отправки -->
-                <button class="text-lg/6 font-semibold text-[#00343A] bg-[#EEBF37] px-5 py-3 rounded-full hover:scale-105 transition duration-300 ease-in-out"
+                <button class="text-lg/6  font-semibold text-[#00343A] bg-[#EEBF37] px-5 py-3 rounded-full hover:scale-105 transition duration-300 ease-in-out"
                     type="submit">Отправить заявку</button>
                 <div id="loadingIndicator" style="display:none;">Загрузка...</div>
             </form>
             <div id="responseMessage"></div>
         </div>
-        @else
-        @endif
     </div>
 </div>
