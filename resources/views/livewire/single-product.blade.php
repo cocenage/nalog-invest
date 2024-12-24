@@ -1,5 +1,5 @@
 @push('meta')
-<title>{{ $meta_title }}</title>
+<title>Nalog Invest | {{ $meta_title }}</title>
 <meta name="description" content="{{ $meta_description }}">
 <meta name="keywords" content="{{ $meta_keywords }}">
 @endpush
@@ -24,7 +24,7 @@
             <li class="text-[#F7F7F7]">{{ $product->slug}}</li>
         </ol>
     </nav>
-    
+
     <div class="px-[15px] md:px-[50px] xl:grid grid-cols-12 gap-5 pt-[15px] pb-[100px]">
         <div class="col-span-10 flex flex-col gap-[30px]">
             <h1>{{ $product->name}}</h1>

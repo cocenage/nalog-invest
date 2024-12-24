@@ -12,7 +12,7 @@
     <meta property="og:title" content="Шевченко Екатерина Викторовна">
     <meta property="og:description" content="Налоговый консалтинг для частных инвесторов">
     <meta property="og:image" content="{{ asset('images/ogimage.webp') }}">
-    <meta property="og:url" content="URL_вашей_страницы">
+    <meta property="og:url" content="https://naloginvest.ru">
     <meta property="og:type" content="website">
 
     @stack('meta')

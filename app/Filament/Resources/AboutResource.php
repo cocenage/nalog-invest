@@ -48,17 +48,17 @@ class AboutResource extends Resource
     {
         return $form
             ->schema([
-                Section::make('Подробное описание услуги')->schema([
+        
+                Section::make('Описание')->schema([
                     FileUpload::make('image')
-                        ->image()
-                        ->directory('/about/images')
-                        ->required()
-                ])->columnSpanFull(),
-                Section::make('Подробное описание услуги')->schema([
+                    ->label('Изображение')
+                    ->image()
+                    ->directory('/about/images')
+                    ->required(),
                     Repeater::make('specifics')->label('')->schema([
                         TextInput::make('h1')
                             ->label('Заголовок')
-                            ->placeholder('Анализ налоговой ситуации')
+
                             ->maxLength(255),
                             RichEditor::make('h2')
                             ->toolbarButtons([
@@ -78,23 +78,23 @@ class AboutResource extends Resource
                                 'undo',
                                 ])
                             ->label('Описание')
-                            ->placeholder('Я предоставлю вам глубокий анализ вашей налоговой ситуации и предложить эффективные решения, соответствующие вашим уникальным потребностям.')
+
                             ->columnSpan(3),
                     ])->columnSpanFull(),
                 ])->columnSpanFull(),
                 Section::make('Подробное описание услуги')->schema([
                     TextInput::make('name')
                         ->label('Заголовок')
-                        ->placeholder('Анализ налоговой ситуации')
+
                         ->maxLength(255),
                     Repeater::make('statistics')->label('')->schema([
                         TextInput::make('h3')
                             ->label('Заголовок')
-                            ->placeholder('Анализ налоговой ситуации')
+
                             ->maxLength(255),
                         TextInput::make('h4')
                             ->label('Описание')
-                            ->placeholder('Я предоставлю вам глубокий анализ вашей налоговой ситуации и предложить эффективные решения, соответствующие вашим уникальным потребностям.')
+
                             ->columnSpan(3),
                     ])->columnSpanFull(),
                 ])->columnSpanFull(),
@@ -107,7 +107,7 @@ class AboutResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('custom')
-                    ->label('Редактирование страницы')
+                    ->label('Редактирование страницы "Обо мне"')
                     ->getStateUsing(fn($record) => 'Обо мне')
                     ->sortable(false),
             ])

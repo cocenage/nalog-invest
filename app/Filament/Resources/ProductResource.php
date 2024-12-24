@@ -83,7 +83,7 @@ class ProductResource extends Resource
                         Tabs\Tab::make('Meta-поля')->schema([
                             TextInput::make('meta_title')
                                 ->label('Meta-заголовок')
-                                ->placeholder('Налоговые консультации от Nalog Invest – Профессиональная помощь для вашего бизнеса')
+                                ->placeholder('Налоговые консультации от Nalog Invest – Профессиональная помощь для ваc!')
                                 ->required(),
                             TextInput::make('meta_keywords')
                                 ->label('Meta-ключевые слова')
@@ -136,7 +136,7 @@ class ProductResource extends Resource
                     ->label('Название услуги')
                     ->sortable()
                     ->searchable(),
-                TextColumn::make('price')
+                TextColumn::make('Стоимость услуги')
                     ->money('RUB')
                     ->sortable(),
                 IconColumn::make('is_active')

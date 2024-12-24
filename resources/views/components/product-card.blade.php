@@ -3,8 +3,8 @@
     <div data-aos="fade-up" class="px-[15px] md:px-[50px] w-full h-[full] xl:h-[250px] flex flex-col justify-end group">
         <div class="flex h-[250px] xl:h-full ">
             <div class="flex flex-col xl:flex-row gap-[40px] w-full xl:items-center  justify-start">
-                <p class="w-[440px] text-2xl font-medium xl:font-normal font-lg:text-3xl 2xl:text-4xl pt-[40px] xl:pt-0 leading-[1.5] col-span-3 xl:pb-[25px]"> {{ $data->name }}</p>
-                <p class="text-lg col-span-7  pb-[30px] xl:pb-0 break-words  w-[100vh] md:w-full"> {{ $data->title }}</p>
+                <p class="w-[440px] text-2xl font-medium xl:font-normal font-lg:text-3xl 2xl:text-4xl pt-[40px] xl:pt-0 leading-[1.5] col-span-3"> {{ $data->name }}</p>
+                <p class="text-lg col-span-7   xl:pb-0 break-words  w-[100vh] md:w-full "> {{ $data->title }}</p>
             </div>
             <div class="xl:flex xl:items-center hover-effect pt-[40px] xl:pt-0">
                 <div class="flex items-center border-[2px] border-[#F8F1E5] group-hover:border-[#00343A] rounded-full w-[50px] h-[50px] xl:w-[60px] xl:h-[60px] justify-center relative overflow-hidden hover:bg-[#E3BF46] transition-all duration-300 ease-in-out">
@@ -37,7 +37,7 @@
 
 
             </div>
-            <p class="text-lg col-span-7  pb-[30px] xl:pb-0 break-words  w-auto pr-[50px]"> {{ $data->title }}</p>
+            <p class="text-lg col-span-7  pb-[30px] xl:pb-0 break-words  w-auto pr-[50px] "> {{ $data->title }}</p>
 
         </div>
         <hr class="w-full border-[1px] border-[#F8F1E5]">
